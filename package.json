@@ -1,0 +1,25 @@
+{
+  "name": "ng2-resource",
+  "version": "1.0.0",
+  "description": "Restful resource module for angular2",
+  "main": "bundles/ng2-resource.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagarrabadiya/ng2-resource.git"
+  },
+  "keywords": [
+    "angular2",
+    "ng2",
+    "resource",
+    "ng2-resource"
+  ],
+  "author": "sagar rabadiya <sam.coolone70@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sagarrabadiya/ng2-resource/issues"
+  },
+  "homepage": "https://github.com/sagarrabadiya/ng2-resource#readme"
+}
