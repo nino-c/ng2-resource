@@ -6,7 +6,7 @@
     "install:typings": "./node_modules/.bin/typings install",
     "compile": "./node_modules/.bin/tsc",
     "prepublish": "npm run install:typings && ./node_modules/.bin/tsc && ./make.js",
-    "publish:gh-pages": "./gh-pages-publish.js",
+    "publish:gh-pages": "node gh-pages-publish.js",
     "postpublish": "npm run build:prod && npm run publish:gh-pages",
     "build:prod": "./node_modules/.bin/webpack --progress --color",
     "build:dev": "./node_modules/.bin/webpack --progress --color",
