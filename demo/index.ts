@@ -7,7 +7,7 @@ import { bootstrap } from 'angular2/platform/browser';
 import {DataProvider} from "./index.service";
 import {HTTP_PROVIDERS,RequestOptions} from "angular2/http";
 import {JsonRequest} from "./json.request.options";
-import {RestProvider} from "../";
+import {RestResource} from "../";
 // todo: enable prod mod only for prod build
 enableProdMode();
 
@@ -92,5 +92,5 @@ export class Demo {
 bootstrap(Demo,[
   HTTP_PROVIDERS,
   provide(RequestOptions,{useClass:JsonRequest}),
-  RestProvider
+  RestResource
   ]);

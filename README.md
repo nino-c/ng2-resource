@@ -9,23 +9,23 @@ import the package using below syntax into your angular 2 app
 
 ```javascript
 //first import the rest provider
-import {RestProvider} from "ng2-resource";
+import {RestResource} from "ng2-resource";
 .......
 
 //inject rest service provider at app level
 bootstrap(Demo,[
   HTTP_PROVIDERS,
   provide(RequestOptions,{useClass:JsonRequest}),
-  RestProvider
+  RestResource
   ]);
-// here you can inject any version of RequestOptions or Http the classes injected before rest provider will be used in the RestProvider
+// here you can inject any version of RequestOptions or Http the classes injected before rest resource will be used in the RestResource
 
 //next implement data sevice provider using below in service file
-import {RestProvider} from 'ng2-resource';
+import {RestResource} from 'ng2-resource';
 import {Http} from 'angular2/http';
 import {Inject} from 'angular2/core';
 
-export class DataProvider extends RestProvider{
+export class DataProvider extends RestResource{
   protected url : string = URL_PREFIX + "posts/:id";
   
   protected params : Object = { ':id' : '@id' }

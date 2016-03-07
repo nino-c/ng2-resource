@@ -10,14 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var http_1 = require('angular2/http');
-var RestProvider = (function () {
-    function RestProvider(_http) {
+var RestResource = (function () {
+    function RestResource(_http) {
         this._http = _http;
         if (typeof this._http == undefined) {
             throw new Error('super(_http) is not called on class that is extended RestProvider');
         }
     }
-    RestProvider.prototype.buildParams = function (data) {
+    RestResource.prototype.buildParams = function (data) {
         if (data === void 0) { data = {}; }
         var _defaultParams = Object.assign({}, this.params);
         //first lookup in default params if reference is found we replace with default params
@@ -30,7 +30,7 @@ var RestProvider = (function () {
         }
         return Object.assign({}, _defaultParams, data);
     };
-    RestProvider.prototype.buildUrl = function (data) {
+    RestResource.prototype.buildUrl = function (data) {
         var _url = this.url;
         var _params = this.buildParams(data);
         var splitUrl = _url.split("/");
@@ -81,7 +81,7 @@ var RestProvider = (function () {
         }
         return splitUrl.join("/") + (substituedUrl.length ? "?" + substituedUrl.substr(0, substituedUrl.length - 1) : "");
     };
-    RestProvider.prototype.createRequest = function (type, data) {
+    RestResource.prototype.createRequest = function (type, data) {
         var _url = this.buildUrl(data);
         var _request;
         var stringParam = '';
@@ -115,33 +115,33 @@ var RestProvider = (function () {
         this._request = _request.map(function (response) { return response.json(); });
         return this._request;
     };
-    RestProvider.prototype.sendResponse = function () {
+    RestResource.prototype.sendResponse = function () {
         return {
             $promise: this._request.toPromise().catch(function (e) { return console.error(e); }),
             $observables: this._request
         };
     };
-    RestProvider.prototype.query = function (data) {
+    RestResource.prototype.query = function (data) {
         var _request = this.createRequest("get", data);
         return this.sendResponse();
     };
-    RestProvider.prototype.save = function (data) {
+    RestResource.prototype.save = function (data) {
         var _request = this.createRequest("post", data);
         return this.sendResponse();
     };
-    RestProvider.prototype.update = function (data) {
+    RestResource.prototype.update = function (data) {
         var _request = this.createRequest("put", data);
         return this.sendResponse();
     };
-    RestProvider.prototype.delete = function (data) {
+    RestResource.prototype.delete = function (data) {
         var _request = this.createRequest("delete", data);
         return this.sendResponse();
     };
-    RestProvider = __decorate([
+    RestResource = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], RestProvider);
-    return RestProvider;
+    ], RestResource);
+    return RestResource;
 }());
-exports.RestProvider = RestProvider;
+exports.RestResource = RestResource;
 //# sourceMappingURL=index.js.map

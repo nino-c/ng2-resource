@@ -9,7 +9,7 @@ export interface Return {
 }
 
 @Injectable()
-export class RestProvider {
+export class RestResource {
   
   protected url: string;
   

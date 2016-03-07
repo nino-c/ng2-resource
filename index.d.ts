@@ -4,7 +4,7 @@ export interface Return {
     $promise: Promise<any>;
     $observables: Observable<Response>;
 }
-export declare class RestProvider {
+export declare class RestResource {
     private _http;
     protected url: string;
     protected params: Object;
