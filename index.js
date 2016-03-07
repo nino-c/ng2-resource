@@ -18,6 +18,7 @@ var RestProvider = (function () {
         }
     }
     RestProvider.prototype.buildParams = function (data) {
+        if (data === void 0) { data = {}; }
         var _defaultParams = Object.assign({}, this.params);
         //first lookup in default params if reference is found we replace with default params
         for (var _prop in _defaultParams) {
@@ -143,4 +144,4 @@ var RestProvider = (function () {
     return RestProvider;
 }());
 exports.RestProvider = RestProvider;
-//# sourceMappingURL=ng2-resource.js.map
+//# sourceMappingURL=index.js.map

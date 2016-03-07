@@ -14,7 +14,7 @@ const async = require('async');
 const Builder = require('systemjs-builder');
 
 const pkg = require('./package.json');
-const name = pkg.name;
+const name = "index";
 const targetFolder = 'bundles';
 
 async.waterfall([
@@ -72,7 +72,7 @@ function buildSystemJs(options) {
     let builder = new Builder();
     builder.config(config);
     return builder
-      .bundle([name, name].join('/'), dest, options)
+      .bundle([pkg.name, name].join('/'), dest, options)
       .then(()=>cb()).catch(cb);
   };
 }

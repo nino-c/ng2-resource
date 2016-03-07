@@ -21,7 +21,7 @@ bootstrap(Demo,[
 // here you can inject any version of RequestOptions or Http the classes injected before rest provider will be used in the RestProvider
 
 //next implement data sevice provider using below in service file
-import {RestProvider} from '../ng2-resource';
+import {RestProvider} from 'ng2-resource';
 import {Http} from 'angular2/http';
 import {Inject} from 'angular2/core';
 

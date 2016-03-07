@@ -1,4 +1,4 @@
-System.registerDynamic("ng2-resource/ng2-resource", ["angular2/core", "angular2/http"], true, function($__require, exports, module) {
+System.registerDynamic("ng2-resource/index", ["angular2/core", "angular2/http"], true, function($__require, exports, module) {
   "use strict";
   ;
   var define;
@@ -30,6 +30,9 @@ System.registerDynamic("ng2-resource/ng2-resource", ["angular2/core", "angular2/
       }
     }
     RestProvider.prototype.buildParams = function(data) {
+      if (data === void 0) {
+        data = {};
+      }
       var _defaultParams = Object.assign({}, this.params);
       for (var _prop in _defaultParams) {
         delete _defaultParams[_prop];

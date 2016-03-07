@@ -11,7 +11,7 @@ export declare class RestProvider {
     protected methods: Object;
     private _request;
     constructor(_http: Http);
-    private buildParams(data);
+    private buildParams(data?);
     private buildUrl(data?);
     private createRequest(type, data?);
     sendResponse(): Return;
