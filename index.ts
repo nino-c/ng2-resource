@@ -25,7 +25,7 @@ export class RestProvider {
     }
   }
   
-  private buildParams(data : any) : Object {
+  private buildParams(data : any = {}) : Object {
     let _defaultParams : any = Object.assign({},this.params);
     //first lookup in default params if reference is found we replace with default params
     for(var _prop in _defaultParams) {

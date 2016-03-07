@@ -17,6 +17,6 @@
   ],
   "files": [
     "./typings/browser.d.ts",
-    "./ng2-resource.ts"
+    "./index.ts"
   ]
 }

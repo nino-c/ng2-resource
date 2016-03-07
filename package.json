@@ -19,7 +19,7 @@
     "postversion": "git push origin master&& git push --tags && npm run postpublish",
     "github-release": "conventional-github-releaser -p angular -r 0"
   },
-  "main": "ng2-resource.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sagarrabadiya/ng2-resource.git"

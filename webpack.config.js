@@ -53,7 +53,7 @@ var config = {
       'angular2/core',
       'angular2/http'
     ],
-    'angular2-resource': ['ng2-resource'],
+    'angular2-resource': ['index'],
     'angular2-bootstrap-demo': 'demo'
   },
 
