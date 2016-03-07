@@ -1,13 +1,13 @@
 {
   "name": "ng2-resource",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "Restful resource module for angular2",
   "scripts": {
     "install:typings": "./node_modules/.bin/typings install",
     "compile": "./node_modules/.bin/tsc",
-    "prepublish": "npm run install:typings && ./node_modules/.bin/tsc && ./make.js",
+    "prepublish": "npm run install:typings && \"./node_modules/.bin/tsc\" && node make.js",
     "publish:gh-pages": "node gh-pages-publish.js",
-    "postpublish": "npm run build:prod && npm run publish:gh-pages",
+    "postpublish": "npm run build:prod",
     "build:prod": "./node_modules/.bin/webpack --progress --color",
     "build:dev": "./node_modules/.bin/webpack --progress --color",
     "serve:dev": "./node_modules/.bin/webpack-dev-server --hot --inline --colors --display-error-details --display-cached --port 8000",
