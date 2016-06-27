@@ -1,4 +1,4 @@
-import {RequestOptions,RequestMethod,Headers} from 'angular2/http';
+import { RequestOptions, RequestMethod, Headers} from '@angular/http';
 
 export class JsonRequest extends RequestOptions {
   constructor() {

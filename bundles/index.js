@@ -1,4 +1,4 @@
-System.registerDynamic("ng2-resource/index", ["angular2/core", "angular2/http"], true, function($__require, exports, module) {
+System.registerDynamic("ng2-resource/index", ["@angular/core", "@angular/http"], true, function($__require, exports, module) {
   "use strict";
   ;
   var define;
@@ -20,8 +20,8 @@ System.registerDynamic("ng2-resource/index", ["angular2/core", "angular2/http"],
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
       return Reflect.metadata(k, v);
   };
-  var core_1 = $__require('angular2/core');
-  var http_1 = $__require('angular2/http');
+  var core_1 = $__require('@angular/core');
+  var http_1 = $__require('@angular/http');
   var RestResource = (function() {
     function RestResource(_http) {
       this._http = _http;

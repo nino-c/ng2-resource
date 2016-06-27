@@ -1,30 +1,30 @@
-import {Injectable} from 'angular2/core';
-import {Http,Response} from 'angular2/http';
-import {RequestOptions} from 'angular2/http';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Http, Response, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+ import 'rxjs/add/operator/map';
 
 export interface Return {
   $promise : Promise<any>;
-  $observables: Observable<Response>
+  $observables: Observable<any>;
 }
 
 @Injectable()
 export class RestResource {
-  
+
   protected url: string;
-  
+
   protected params: Object;
-  
+
   protected methods: Object;
-  
+
   private _request: Observable<any>;
-  
+
   constructor(private _http : Http){
     if(typeof this._http == undefined) {
       throw new Error('super(_http) is not called on class that is extended RestProvider');
     }
   }
-  
+
   private buildParams(data : any = {}) : Object {
     let _defaultParams : any = Object.assign({},this.params);
     //first lookup in default params if reference is found we replace with default params
@@ -37,7 +37,7 @@ export class RestResource {
     }
     return Object.assign({},_defaultParams,data);
   }
-  
+
   private buildUrl (data ?: Object) : string {
     let _url = this.url;
     let _params : any = this.buildParams(data);
@@ -84,7 +84,7 @@ export class RestResource {
     }
     return splitUrl.join("/") + (substituedUrl.length ? "?" + substituedUrl.substr(0,substituedUrl.length-1) : "") ;
   }
-  
+
   private createRequest(type: string,data ?: Object) : Observable<any> {
     let _url : string = this.buildUrl(data);
     let _request : Observable<any>
@@ -92,7 +92,7 @@ export class RestResource {
     let _jsonBuild : any = {}
     if(_url.split('?')[1] && _url.split('?')[1].length) {
       (_url.split('?')[1].split('&')).forEach( _paramPart => {
-        _jsonBuild[_paramPart.split('=')[0]] = _paramPart.split('=')[1]; 
+        _jsonBuild[_paramPart.split('=')[0]] = _paramPart.split('=')[1];
       });
       stringParam = JSON.stringify(_jsonBuild);
     }
@@ -119,33 +119,33 @@ export class RestResource {
     this._request = _request.map((response: Response) => response.json());
     return this._request;
   }
-  
+
   sendResponse() : Return {
     return {
       $promise: this._request.toPromise().catch((e:any)=>console.error(e)),
       $observables: this._request
     }
   }
-  
+
   query (data ?: Object) : Return{
     let _request : Observable<Response> = this.createRequest("get",data);
     return this.sendResponse();
   }
-  
+
   save (data ?: Object) : Return {
     let _request : Observable<Response> = this.createRequest("post",data);
     return this.sendResponse();
   }
-  
+
   update( data ?: Object) : Return {
     let _request : Observable<Response> = this.createRequest("put",data);
     return this.sendResponse();
   }
-  
+
   delete( data ?: Object) : Return {
     let _request : Observable<Response> = this.createRequest("delete",data);
     return this.sendResponse();
   }
-  
-  
+
+
 }
