@@ -1,4 +1,4 @@
-System.registerDynamic("ng2-resource/index", ["@angular/core", "@angular/http"], true, function($__require, exports, module) {
+System.registerDynamic("ng2-resource/index", ["@angular/core", "@angular/http", "rxjs/add/operator/map"], true, function($__require, exports, module) {
   "use strict";
   ;
   var define;
@@ -22,6 +22,7 @@ System.registerDynamic("ng2-resource/index", ["@angular/core", "@angular/http"],
   };
   var core_1 = $__require('@angular/core');
   var http_1 = $__require('@angular/http');
+  $__require('rxjs/add/operator/map');
   var RestResource = (function() {
     function RestResource(_http) {
       this._http = _http;

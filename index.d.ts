@@ -1,8 +1,9 @@
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
 export interface Return {
     $promise: Promise<any>;
-    $observables: Observable<Response>;
+    $observables: Observable<any>;
 }
 export declare class RestResource {
     private _http;

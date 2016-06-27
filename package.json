@@ -1,6 +1,6 @@
 {
   "name": "ng2-resource",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Restful resource module for angular2",
   "scripts": {
     "install:typings": "./node_modules/.bin/typings install",
